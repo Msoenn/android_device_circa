@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Circa: first-boot setting defaults (static RRO on com.android.providers.settings). -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.circa.overlay.settingsprovider">
+    <application android:hasCode="false" />
+    <overlay
+        android:targetPackage="com.android.providers.settings"
+        android:isStatic="true"
+        android:priority="900" />
+</manifest>

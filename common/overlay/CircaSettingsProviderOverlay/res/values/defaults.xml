@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Circa first-boot defaults (SettingsProvider writes these into the settings database on a fresh /data
+  only; an existing /data keeps its values).
+-->
+<resources>
+    <!-- No setup wizard on the watch: start provisioned, with user setup complete. -->
+    <bool name="def_device_provisioned">true</bool>
+    <bool name="def_user_setup_complete">true</bool>
+
+    <!-- Screen orientation locked (the wrist turns the watch, not the content). -->
+    <bool name="def_accelerometer_rotation">false</bool>
+
+    <!-- Bluetooth on: the watch talks to the phone over BLE. (A GSI patch turns the AOSP default off.) -->
+    <bool name="def_bluetooth_on">true</bool>
+
+    <!-- Wi-Fi on (wireless adb, time sync). Option for later, battery: false here = off by default. -->
+    <bool name="def_wifi_on">true</bool>
+
+    <!-- Screen timeout 30 s. -->
+    <integer name="def_screen_off_timeout">30000</integer>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Circa: framework-res values for the round watch (static RRO on "android"). -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.circa.overlay.framework">
+    <application android:hasCode="false" />
+    <overlay
+        android:targetPackage="android"
+        android:isStatic="true"
+        android:priority="900" />
+</manifest>

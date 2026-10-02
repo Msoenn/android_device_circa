@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  SystemUI status bar on the 384x384 round panel. px on purpose (independent of the density in use).
+
+  status_bar_padding_start/end: padding of status_bar_contents (phone default 4dp, which puts the clock
+  and the icons under the round edge). Measured on the emulator: 64px is the largest value that keeps
+  every status bar item (clock, Wi-Fi, battery) on the panel; 96px clips the Wi-Fi icon.
+-->
+<resources>
+    <dimen name="status_bar_padding_start">64px</dimen>
+    <dimen name="status_bar_padding_end">64px</dimen>
+</resources>

@@ -1,0 +1,29 @@
+//
+// Circa static product overlays (installed to /product/overlay, enabled at boot, not user-togglable).
+// They replace the aurora-round, aurora-round-systemui and aurora-doze RROs that used to be installed
+// by a Magisk module, and the settings the module's boot script wrote.
+//
+
+runtime_resource_overlay {
+    name: "CircaFrameworkOverlay",
+    manifest: "CircaFrameworkOverlay/AndroidManifest.xml",
+    resource_dirs: ["CircaFrameworkOverlay/res"],
+    product_specific: true,
+    sdk_version: "current",
+}
+
+runtime_resource_overlay {
+    name: "CircaSystemUIOverlay",
+    manifest: "CircaSystemUIOverlay/AndroidManifest.xml",
+    resource_dirs: ["CircaSystemUIOverlay/res"],
+    product_specific: true,
+    sdk_version: "current",
+}
+
+runtime_resource_overlay {
+    name: "CircaSettingsProviderOverlay",
+    manifest: "CircaSettingsProviderOverlay/AndroidManifest.xml",
+    resource_dirs: ["CircaSettingsProviderOverlay/res"],
+    product_specific: true,
+    sdk_version: "current",
+}

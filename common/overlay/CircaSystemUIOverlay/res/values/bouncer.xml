@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The PIN bouncer (KeyguardPINView, layout/keyguard_pin_view) on the 384x384 round panel at 160 dpi
+  (1dp = 1px). The values were tuned at 192 dpi (1dp = 1.2px) and are scaled by 1.2 here, so the pixel
+  geometry stays the measured one: a 3x4 pad of 85x60px pill keys with 7px column gaps, a slim entry bar
+  above it and the "Enter PIN" text above that, everything inside the circle.
+  This is an interim layout; a real round PIN layout replaces it later.
+-->
+<resources>
+    <!-- Width of the pin view (stock 420dp, wider than the panel); the keys centre in it. -->
+    <dimen name="keyguard_security_width">307dp</dimen>
+    <!-- Key width cap, gap between columns, row gap (also row0's bottom padding under the entry). -->
+    <dimen name="num_pad_key_width">85dp</dimen>
+    <dimen name="num_pad_key_margin_end">7dp</dimen>
+    <dimen name="num_pad_entry_row_margin_bottom">5dp</dimen>
+    <!-- width/height of a key: 85/1.42 = 60px, a pill instead of the phone's square key. -->
+    <string name="num_pad_key_ratio">1.42</string>
+    <!-- Entry field: a slim bar instead of the phone's 80dp block. -->
+    <dimen name="keyguard_password_height">24dp</dimen>
+    <dimen name="keyguard_pin_field_height">24dp</dimen>
+    <!-- Vertical budget: no top gap, no bottom gap. -->
+    <dimen name="keyguard_security_view_top_margin">0dp</dimen>
+    <dimen name="keyguard_security_view_bottom_margin">0dp</dimen>
+    <!-- Top margin of the bouncer message (stock 20dp). Negative: pulls the message up over the empty
+         space above the pad, which gives the pad the room for 60px keys. -->
+    <dimen name="keyguard_lock_padding">-19dp</dimen>
+    <!-- Hide the secondary ("2 lines of detail") message row. -->
+    <dimen name="secondary_message_padding">0dp</dimen>
+    <integer name="bouncer_secondary_message_lines">0</integer>
+    <!-- Emergency button + carrier text (keyguard_eca) cannot be removed by a value; it is pushed below
+         the panel instead: 30dp top margin + 48dp button - 78dp bottom margin = 0 height, drawn off screen. -->
+    <dimen name="keyguard_eca_top_margin">30dp</dimen>
+    <dimen name="keyguard_eca_bottom_margin">-78dp</dimen>
+</resources>
