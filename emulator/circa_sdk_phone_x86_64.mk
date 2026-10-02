@@ -14,4 +14,8 @@ $(call inherit-product, vendor/lineage/build/target/product/lineage_sdk_phone_x8
 $(call inherit-product, device/circa/common/circa.mk)
 
 PRODUCT_NAME := circa_sdk_phone_x86_64
+
+# Lineage's lunch derives LINEAGE_BUILD (which turns on its board config) from a "lineage_" product name
+# prefix; set it here like the GSI products do.
+LINEAGE_BUILD := sdk_phone_x86_64
 PRODUCT_MODEL := Circa emulator (x86_64)

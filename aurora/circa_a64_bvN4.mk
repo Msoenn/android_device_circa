@@ -13,3 +13,5 @@ $(call inherit-product, device/circa/common/circa.mk)
 $(call inherit-product, device/circa/aurora/aurora.mk)
 
 PRODUCT_NAME := circa_a64_bvN4
+# LINEAGE_BUILD (normally derived by lunch from a "lineage_" product name) is set to GSI by
+# lineage_a64_bvN4.mk.
