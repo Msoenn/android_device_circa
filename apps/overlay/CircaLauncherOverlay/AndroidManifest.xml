@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Circa: framework-res values that wire the system to the Circa launcher (static RRO on "android"). -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.circa.overlay.launcher">
+    <application android:hasCode="false" />
+    <overlay
+        android:targetPackage="android"
+        android:isStatic="true"
+        android:priority="901" />
+</manifest>
