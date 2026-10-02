@@ -1,0 +1,10 @@
+//
+// Circa product layer: features declared from /product.
+//
+
+prebuilt_etc {
+    name: "circa-features.xml",
+    src: "permissions/circa-features.xml",
+    product_specific: true,
+    sub_dir: "permissions",
+}

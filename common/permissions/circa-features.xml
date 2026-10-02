@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Features stock Wear OS declares from its /product partition (wearable_core_hardware.xml), which the GSI
+  flow deletes. Without android.software.app_widgets AppWidgetService never starts, and launchers that
+  use AppWidgetManager crash with a NullPointerException.
+
+  android.hardware.type.watch is deliberately NOT declared yet: it switches UI_MODE_TYPE_WATCH and the
+  Wear code paths in the framework and in apps. Decide with an emulator test first.
+-->
+<permissions>
+    <feature name="android.software.app_widgets" />
+</permissions>
