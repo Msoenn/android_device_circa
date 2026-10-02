@@ -9,11 +9,14 @@ a root module, overlays installed from /data, adb setup) is declared here.
 | Lunch target | What |
 |---|---|
 | `circa_a64_bvN4-bp4a-userdebug` | the watch: `lineage_a64_bvN4` (a64 GSI, vanilla, ext4) + `common/` + `aurora/`. `m systemimage` |
-| `circa_sdk_phone_x86_64-bp4a-userdebug` | the emulator: `lineage_sdk_phone_x86_64` + `common/`. `m && m emu_img_zip`; build with `SELINUX_IGNORE_NEVERALLOWS=true` |
+| `lineage_sdk_circa_x86_64-bp4a-userdebug` | the emulator: `lineage_sdk_phone_x86_64` + `common/`. `m emu_img_zip` (not `droid`: its boot-jars check rejects the TrebleDroid radio classes); build with `SELINUX_IGNORE_NEVERALLOWS=true` |
 
 Own product names (not `lineage_a64_bvN4` + an inherit) so the stock Lineage targets stay buildable from
 the same tree for comparison, and so the build identity (`ro.product.*.name`, fingerprint) says which image
-is on the device. `PRODUCT_DEVICE` is unchanged, so the `out/target/product/<device>` directories are
+is on the device. The emulator keeps a `lineage_sdk_` prefix because tooling keys off it: Lineage's lunch
+sets `LINEAGE_BUILD` (which loads the Lineage board config) only for `lineage_*` names, and goldfish defines
+`emu_img_zip` only for `lineage_sdk_*`/`sdk_*`. The watch product inherits `LINEAGE_BUILD := GSI` from
+`lineage_a64_bvN4.mk`, so it can drop the prefix. `PRODUCT_DEVICE` is unchanged, so the `out/target/product/<device>` directories are
 shared with the stock targets.
 
 Needs these Circa forks: `vendor/lineage` (`CIRCA_DEBUGGABLE_USERDEBUG`, keeps `ro.debuggable=1` on

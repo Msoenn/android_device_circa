@@ -13,9 +13,8 @@ CIRCA_DEBUGGABLE_USERDEBUG := true
 $(call inherit-product, vendor/lineage/build/target/product/lineage_sdk_phone_x86_64.mk)
 $(call inherit-product, device/circa/common/circa.mk)
 
-PRODUCT_NAME := circa_sdk_phone_x86_64
-
-# Lineage's lunch derives LINEAGE_BUILD (which turns on its board config) from a "lineage_" product name
-# prefix; set it here like the GSI products do.
-LINEAGE_BUILD := sdk_phone_x86_64
+# The name keeps the "lineage_sdk_" prefix on purpose: Lineage's lunch only sets LINEAGE_BUILD (which
+# loads the Lineage board config) for "lineage_*" products, and goldfish only defines emu_img_zip for
+# "lineage_sdk_*"/"sdk_*" products.
+PRODUCT_NAME := lineage_sdk_circa_x86_64
 PRODUCT_MODEL := Circa emulator (x86_64)
