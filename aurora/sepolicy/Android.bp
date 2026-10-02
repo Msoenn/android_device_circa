@@ -1,0 +1,9 @@
+//
+// Circa: merges a stock system_ext SELinux policy into the GSI's system_ext policy. Used by Android.mk.
+//
+
+python_binary_host {
+    name: "circa_sepolicy_merge",
+    main: "merge_system_ext_sepolicy.py",
+    srcs: ["merge_system_ext_sepolicy.py"],
+}
