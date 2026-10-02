@@ -41,6 +41,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Product properties: the generic system partition does not take device properties.
 PRODUCT_PRODUCT_PROPERTIES += \
     service.adb.tcp.port=5555
+# adb root allowed by default (Lineage's adb_root service state), see init/init.circa.rc.
+PRODUCT_PACKAGES += \
+    init.circa.rc
 
 # --- Private parts (our apps, adb key) ----------------------------------------------------------------
 # A plain local directory, not a repo project; absent in public checkouts, which then build without our

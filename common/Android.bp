@@ -1,5 +1,5 @@
 //
-// Circa product layer: features declared from /product.
+// Circa product layer: features declared from /product, init script.
 //
 
 prebuilt_etc {
@@ -7,4 +7,11 @@ prebuilt_etc {
     src: "permissions/circa-features.xml",
     product_specific: true,
     sub_dir: "permissions",
+}
+
+prebuilt_etc {
+    name: "init.circa.rc",
+    src: "init/init.circa.rc",
+    product_specific: true,
+    sub_dir: "init",
 }

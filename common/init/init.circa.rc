@@ -1,0 +1,6 @@
+# Circa: adb root allowed by default (LineageOS "Rooted debugging" in Developer options; adbd asks
+# the adb_root service, which keeps its state in /data/adbroot/enabled). Written on every boot, before
+# adb_root starts (class main), so userdebug images always allow `adb root`, `adb remount`, `adb sync`.
+on post-fs-data
+    mkdir /data/adbroot 0700 root root
+    write /data/adbroot/enabled 1
