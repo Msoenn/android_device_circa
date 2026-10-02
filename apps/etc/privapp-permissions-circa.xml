@@ -8,6 +8,7 @@
         <permission name="android.permission.PACKAGE_USAGE_STATS" />
         <permission name="android.permission.REBOOT" />
         <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND" />
+        <permission name="android.permission.SUBSCRIBE_TO_KEYGUARD_LOCKED_STATE" />
         <permission name="android.permission.WRITE_SECURE_SETTINGS" />
     </privapp-permissions>
     <privapp-permissions package="org.pixelwatch.watchlink">
