@@ -38,7 +38,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Key authentication stays on (ro.adb.secure=1 from vendor/lineage for userdebug). The authorized key is
 # baked in privately: vendor/circa-private sets PRODUCT_ADB_KEYS (-> /product/etc/security/adb_keys, which
 # /adb_keys links to). Wireless adb on TCP 5555 from boot (adbd reads service.adb.tcp.port at start).
-PRODUCT_SYSTEM_PROPERTIES += \
+# Product properties: the generic system partition does not take device properties.
+PRODUCT_PRODUCT_PROPERTIES += \
     service.adb.tcp.port=5555
 
 # --- Private parts (our apps, adb key) ----------------------------------------------------------------
