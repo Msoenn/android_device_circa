@@ -1,0 +1,6 @@
+# adbd runs as root in the su domain (adb root: --root_seclabel=u:r:su:s0). AOSP makes su permissive on
+# userdebug/eng; the GSI's system/sepolicy dropped that (it compiles the userdebug policy for user builds
+# too), which leaves a root adbd unable to bind its auth socket: adbd crash-loops and adb goes offline.
+userdebug_or_eng(`
+  permissive su;
+')
