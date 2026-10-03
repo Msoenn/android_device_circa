@@ -69,9 +69,10 @@ Settings defaults only apply to a fresh `/data`; an existing `/data` keeps its v
 | Backgrounds, ThemePicker | wallpaper and style pickers; the watch face draws its own background | Settings' "Wallpaper & style" entry has no target |
 | LineageSetupWizard | first-boot setup; replaced by the defaults above | nothing (it overrides AOSP Provision itself) |
 | Launcher3QuickStep, Launcher3Overlay | overridden by the Circa launcher module (not here), so a build without our apps keeps a launcher | Quickstep is the recents provider (`config_recentsComponentName`) and handles the swipe-up-home gesture; back (edge swipe) is SystemUI's and keeps working. Home is the crown |
+| LatinIME | the phone keyboard; overridden by the Circa keyboard module (not here), so a build without our apps keeps a keyboard | nothing. It comes from `handheld_product.mk` and Lineage's `common_mobile.mk` (both products). No other IME is in either product (no OpenWnn, PinyinIME or Google keyboard: `device/phh/treble/gapps.mk` is not inherited) |
 
 Kept on purpose: SystemUI, Settings, SettingsProvider, PermissionController, PackageInstaller, DocumentsUI,
-Bluetooth, Shell, TeleService/Telecom, LatinIME (text input), DeskClock (alarms, timers), WebView.
+Bluetooth, Shell, TeleService/Telecom, DeskClock (alarms, timers), WebView.
 Candidates for later (not phone-only, so not removed yet): ExactCalculator, Recorder, Twelve (music),
 AudioFX, EmergencyInfo, LiveWallpapersPicker, Stk/SimAppDialog/CellBroadcast (telephony stack; check
 first whether anything binds them).
@@ -85,11 +86,20 @@ directory that no manifest includes. If present, `common/circa.mk` inherits
 * add the app modules to `PRODUCT_PACKAGES`: `android_app_import` modules, `privileged: true`,
   `product_specific: true` (the permission files here are product-partition files and only apply to
   product priv-apps), with `required:` the matching modules from `apps/Android.bp`. The launcher module
-  `overrides` `Launcher3QuickStep` and `Launcher3Overlay`.
+  `overrides` `Launcher3QuickStep` and `Launcher3Overlay`; the keyboard module (`org.circa.keyboard`)
+  `overrides` `LatinIME`.
 * set `PRODUCT_ADB_KEYS` to an `adb_keys` file in that directory.
 * provide the stock system_ext SELinux inputs for `aurora/sepolicy` (see there).
 
 Without it the products still build: no Circa apps (Launcher3 stays), no baked-in adb key, no SELinux merge.
+
+The default keyboard needs no setting here. AOSP's SettingsProvider has no default for
+`default_input_method`/`enabled_input_methods`; on a fresh `/data` InputMethodManagerService enables the
+system IMEs that declare a keyboard subtype for the system (or English fallback) locale and selects the
+first. With LatinIME overridden, the Circa keyboard is the only system IME, so it is enabled and selected
+on first boot, provided its `method.xml` declares an `en`/`en_US` subtype with
+`imeSubtypeMode="keyboard"`. `def_show_ime_with_hard_keyboard` stays false: neither the watch nor the
+emulator AVD (`hw.keyboard=no`) has a hardware keyboard.
 
 ## Not here (yet)
 
