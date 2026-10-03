@@ -13,7 +13,15 @@
     </privapp-permissions>
     <privapp-permissions package="org.circa.settings">
         <permission name="android.permission.BLUETOOTH_PRIVILEGED" />
+        <permission name="android.permission.CHANGE_COMPONENT_ENABLED_STATE" />
+        <permission name="android.permission.CHANGE_CONFIGURATION" />
+        <permission name="android.permission.DELETE_PACKAGES" />
+        <permission name="android.permission.FORCE_STOP_PACKAGES" />
+        <permission name="android.permission.MODIFY_PHONE_STATE" />
+        <permission name="android.permission.PACKAGE_USAGE_STATS" />
         <permission name="android.permission.REBOOT" />
+        <permission name="android.permission.SET_TIME_ZONE" />
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND" />
         <permission name="android.permission.WRITE_SECURE_SETTINGS" />
     </privapp-permissions>
     <privapp-permissions package="org.pixelwatch.watchlink">

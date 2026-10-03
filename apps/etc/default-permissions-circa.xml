@@ -10,6 +10,8 @@
     <exception package="org.circa.settings">
         <!-- Bluetooth on/off (Connectivity) -->
         <permission name="android.permission.BLUETOOTH_CONNECT" fixed="false" />
+        <!-- Bluetooth page: scan for devices to pair -->
+        <permission name="android.permission.BLUETOOTH_SCAN" fixed="false" />
     </exception>
     <exception package="org.pixelwatch.watchlink">
         <permission name="android.permission.BLUETOOTH_CONNECT" fixed="false" />
