@@ -12,7 +12,7 @@
     <!-- Key width cap, gap between columns, row gap (also row0's bottom padding under the entry). -->
     <dimen name="num_pad_key_width">90dp</dimen>
     <dimen name="num_pad_key_margin_end">2dp</dimen>
-    <dimen name="num_pad_entry_row_margin_bottom">5dp</dimen>
+    <dimen name="num_pad_entry_row_margin_bottom">15dp</dimen>
     <!-- width/height of a key: 85/1.42 = 60px, a pill instead of the phone's square key. -->
     <string name="num_pad_key_ratio">1.18</string>
     <!-- Entry field: a slim bar instead of the phone's 80dp block. -->
