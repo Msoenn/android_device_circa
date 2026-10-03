@@ -17,7 +17,7 @@
         <item name="android:windowFullscreen">true</item>
         <item name="android:backgroundDimEnabled">false</item>
         <item name="android:windowBackground">@android:color/black</item>
-        <item name="android:dialogPreferredPadding">44px</item>
+        <item name="android:dialogPreferredPadding">60px</item>
     </style>
 
     <style name="Theme.Material.Light.Dialog.BaseAlert" parent="android:Theme.Material.Light.Dialog">
@@ -27,7 +27,7 @@
         <item name="android:windowFullscreen">true</item>
         <item name="android:backgroundDimEnabled">false</item>
         <item name="android:windowBackground">@android:color/black</item>
-        <item name="android:dialogPreferredPadding">44px</item>
+        <item name="android:dialogPreferredPadding">60px</item>
     </style>
 
     <!-- App crash / ANR list rows: centred 52 dp pills with a small icon. -->

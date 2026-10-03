@@ -5,9 +5,9 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingTop="8px"
-    android:paddingBottom="24px"
-    android:paddingStart="44px"
-    android:paddingEnd="44px">
+    android:paddingBottom="56px"
+    android:paddingStart="60px"
+    android:paddingEnd="60px">
 
     <Button
         android:id="@*android:id/aerr_restart"

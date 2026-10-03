@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Circa: AlertDialog template centred in the circle (see values/circa_dialogs.xml). -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none">
 <com.android.internal.widget.AlertDialogLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@*android:id/parentPanel"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center_vertical"
     android:gravity="center_horizontal|top"
-    android:paddingTop="28px"
-    android:paddingBottom="28px"
+    android:paddingTop="44px"
+    android:paddingBottom="56px"
     android:orientation="vertical">
 
     <include layout="@*android:layout/alert_dialog_title_material" />
@@ -72,3 +76,4 @@
         android:layout_height="wrap_content"
         layout="@*android:layout/alert_dialog_button_bar_material" />
 </com.android.internal.widget.AlertDialogLayout>
+</ScrollView>
