@@ -11,6 +11,11 @@
         <permission name="android.permission.SUBSCRIBE_TO_KEYGUARD_LOCKED_STATE" />
         <permission name="android.permission.WRITE_SECURE_SETTINGS" />
     </privapp-permissions>
+    <privapp-permissions package="org.circa.settings">
+        <permission name="android.permission.BLUETOOTH_PRIVILEGED" />
+        <permission name="android.permission.REBOOT" />
+        <permission name="android.permission.WRITE_SECURE_SETTINGS" />
+    </privapp-permissions>
     <privapp-permissions package="org.pixelwatch.watchlink">
         <permission name="android.permission.SCHEDULE_EXACT_ALARM" />
     </privapp-permissions>
