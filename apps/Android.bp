@@ -5,7 +5,7 @@
 // the modules below in `required`, so these are only installed together with the apps.
 //
 
-// Framework values that point at the launcher: AOD dream, crown short press, DND + notification listener.
+// Framework values that point at the launcher: AOD dream, crown/side button policy, DND + notification listener.
 runtime_resource_overlay {
     name: "CircaLauncherOverlay",
     manifest: "overlay/CircaLauncherOverlay/AndroidManifest.xml",

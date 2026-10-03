@@ -4,13 +4,14 @@
          BIND_DREAM_SERVICE), not SystemUI's DozeService. -->
     <string name="config_dozeComponent" translatable="false">org.pixelwatch.launcher/.AmbientDreamService</string>
 
-    <!-- Crown (KEYCODE_STEM_PRIMARY) short press: 2 = launch config_primaryShortPressTargetActivity.
-         This XML default is also what makes PhoneWindowManager handle stem keys at all
-         (hasStemPrimaryBehavior() reads it), and it is the default of
-         Settings.Global.stem_primary_button_short_press. The target is the launcher by component, so
-         there is no ALL_APPS chooser. -->
-    <integer name="config_shortPressOnStemPrimaryBehavior">2</integer>
-    <string name="config_primaryShortPressTargetActivity" translatable="false">org.pixelwatch.launcher/.MainActivity</string>
+    <!-- Buttons (Circa PhoneWindowManager policy, frameworks/base CircaKeyPolicy). A non-zero stem value is
+         also what makes PhoneWindowManager install the stem key rule at all.
+         Crown short press 3 = Circa: face on top -> app list (ALL_APPS to the HOME holder), else -> face.
+         Crown long press 2 = power menu. Side button short press (screen on, unlocked) -> Recents
+         (org.circa.intent.action.SHOW_RECENTS to the HOME holder). -->
+    <integer name="config_shortPressOnStemPrimaryBehavior">3</integer>
+    <integer name="config_longPressOnStemPrimaryBehavior">2</integer>
+    <bool name="config_circaPowerShortPressOpensRecents">true</bool>
 
     <!-- Do Not Disturb access (quick settings tile) and the launcher's notification listener (the
          notification stream), granted by default instead of from the shell. -->
