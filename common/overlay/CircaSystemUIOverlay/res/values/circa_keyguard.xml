@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Circa: turn the watch keyguard on for this product (com.android.systemui.circa.keyguard: the face
+  while locked, the round PIN pad in Wear colours, opaque black bouncer).
+-->
+<resources>
+    <bool name="config_circaKeyguard">true</bool>
+</resources>

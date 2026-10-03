@@ -19,4 +19,6 @@
 
     <!-- Screen timeout 30 s. -->
     <integer name="def_screen_off_timeout">30000</integer>
+    <!-- Lock engages the moment the screen turns off (stock Wear OS), instead of AOSP's 5 s. -->
+    <integer name="def_lock_screen_lock_after_timeout">0</integer>
 </resources>

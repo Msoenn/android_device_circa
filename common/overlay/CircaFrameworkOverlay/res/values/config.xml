@@ -31,4 +31,7 @@
     <bool name="config_autoPowerModeUseMotionSensor">false</bool>
     <!-- No location prefetch before deep idle (stock Wear: false; already off via aconfig here). -->
     <bool name="config_autoPowerModePrefetchLocation">false</bool>
+
+    <!-- No PIN set: no keyguard at all (wake goes straight to the face). -->
+    <bool name="config_disableLockscreenByDefault">true</bool>
 </resources>
