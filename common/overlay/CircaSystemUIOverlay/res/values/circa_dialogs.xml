@@ -12,17 +12,4 @@
     <!-- The media output switcher's "this device" row (SettingsLib strings compiled into SystemUI). -->
     <string name="media_transfer_this_device_name">This watch</string>
     <string name="media_transfer_this_phone">This watch</string>
-
-    <!-- Dialog buttons (media output "Done", ...) at least 76 px tall (the audit's 72 px floor). -->
-    <style name="Widget.Dialog.Button" parent="@*com.android.systemui:style/Widget.Dialog">
-        <item name="android:buttonCornerRadius">28dp</item>
-        <item name="android:background">@*com.android.systemui:drawable/qs_dialog_btn_filled</item>
-        <item name="android:textColor">@*com.android.systemui:color/qs_dialog_btn_filled_text_color</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:lineHeight">20sp</item>
-        <item name="android:fontFamily">@*android:string/config_bodyFontFamilyMedium</item>
-        <item name="android:stateListAnimator">@null</item>
-        <item name="android:minWidth">0dp</item>
-        <item name="android:minHeight">76px</item>
-    </style>
 </resources>
