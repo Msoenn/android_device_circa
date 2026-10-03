@@ -17,18 +17,23 @@ LOCAL_LICENSE_KINDS := SPDX-license-identifier-Apache-2.0
 LOCAL_LICENSE_CONDITIONS := notice
 LOCAL_OVERRIDES_PACKAGES := \
     Aperture \
+    AudioFX \
     Backgrounds \
     Camelot \
     Contacts \
     Dialer \
     Etar \
+    ExactCalculator \
     Gallery2 \
     Glimpse \
     Jelly \
     LineageSetupWizard \
     messaging \
     PhotoTable \
-    ThemePicker
+    Recorder \
+    Stk \
+    ThemePicker \
+    Twelve
 LOCAL_UNINSTALLABLE_MODULE := true
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_SRC_FILES := /dev/null

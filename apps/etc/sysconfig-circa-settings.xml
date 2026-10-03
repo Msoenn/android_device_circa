@@ -15,4 +15,9 @@
     <component-override package="com.android.settings">
         <component class=".Settings" enabled="false" />
     </component-override>
+    <!-- DocumentsUI stays installed (system file picker for OPEN_DOCUMENT/GET_CONTENT); hide only its
+         "Files" launcher entry, which is a phone layout. -->
+    <component-override package="com.android.documentsui">
+        <component class=".LauncherActivity" enabled="false" />
+    </component-override>
 </config>

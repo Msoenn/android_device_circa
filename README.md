@@ -61,21 +61,26 @@ Settings defaults only apply to a fresh `/data`; an existing `/data` keeps its v
 | Dialer, messaging | telephony UI; no calls or SMS on the watch | Telecom/TeleService stay (the framework expects the phone process); no default dialer/SMS role holder is fine |
 | Contacts | address book UI; ContactsProvider stays | nothing in the image |
 | Aperture (+ its lens launcher and overlay) | camera app; no camera | nothing |
+| AudioFX | phone audio-effects UI; no audio output on the watch | nothing |
+| DocumentsUI (Files) | **kept** (it is also the system file picker for OPEN_DOCUMENT/GET_CONTENT); only its launcher icon is hidden via sysconfig component-override | apps that pick files |
+| ExactCalculator | phone calculator: 33 targets under 72 px and the RAD/menu row outside the circle; a round Circa calculator replaces it later | nothing |
 | Glimpse, Gallery2 | galleries; no camera, no photos | nothing |
 | Jelly | phone browser; the WebView stays | nothing |
 | Etar | calendar UI; CalendarProvider stays | nothing |
 | Camelot | PDF viewer | nothing |
 | PhotoTable | photo screensaver; the AOD dream is the launcher's | nothing |
+| Recorder | phone voice recorder; no mic capture on the watch | nothing |
+| Stk | SIM Toolkit; the watch has no SIM | nothing (SimAppDialog/CellBroadcast stay) |
+| Twelve | phone music player; no audio output on the watch | nothing |
 | Backgrounds, ThemePicker | wallpaper and style pickers; the watch face draws its own background | Settings' "Wallpaper & style" entry has no target |
 | LineageSetupWizard | first-boot setup; replaced by the defaults above | nothing (it overrides AOSP Provision itself) |
 | Launcher3QuickStep, Launcher3Overlay | overridden by the Circa launcher module (not here), so a build without our apps keeps a launcher | Quickstep is the recents provider (`config_recentsComponentName`) and handles the swipe-up-home gesture; back (edge swipe) is SystemUI's and keeps working. Home is the crown |
 | LatinIME | the phone keyboard; overridden by the Circa keyboard module (not here), so a build without our apps keeps a keyboard | nothing. It comes from `handheld_product.mk` and Lineage's `common_mobile.mk` (both products). No other IME is in either product (no OpenWnn, PinyinIME or Google keyboard: `device/phh/treble/gapps.mk` is not inherited) |
 
-Kept on purpose: SystemUI, Settings, SettingsProvider, PermissionController, PackageInstaller, DocumentsUI,
+Kept on purpose: SystemUI, Settings, SettingsProvider, PermissionController, PackageInstaller,
 Bluetooth, Shell, TeleService/Telecom, DeskClock (alarms, timers), WebView.
-Candidates for later (not phone-only, so not removed yet): ExactCalculator, Recorder, Twelve (music),
-AudioFX, EmergencyInfo, LiveWallpapersPicker, Stk/SimAppDialog/CellBroadcast (telephony stack; check
-first whether anything binds them).
+Candidates for later (not phone-only, so not removed yet): EmergencyInfo, LiveWallpapersPicker,
+SimAppDialog/CellBroadcast (telephony stack; check first whether anything binds them).
 
 ## Private parts
 
