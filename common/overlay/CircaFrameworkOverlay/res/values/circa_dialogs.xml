@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Circa dialog theme (docs/watch-ui/circa/dialogs.md). A static RRO cannot add new resource names, so
+  every item here overrides a framework resource that already exists.
+
+  Theme.Material.Dialog.BaseAlert is the common ancestor of every AlertDialog theme (DeviceDefault,
+  DeviceDefault.Light, Settings, the app-error/ANR dialog): one override makes them all a full-width,
+  black, centred page instead of a floating phone card. The layouts (alert_dialog_material,
+  alert_dialog_button_bar_material, alert_dialog_title_material, app_error_dialog, app_anr_dialog)
+  stack the content in the middle of the circle with 76 px (about 48 dp at stock Wear density) pill buttons.
+-->
+<resources>
+    <style name="Theme.Material.Dialog.BaseAlert" parent="android:Theme.Material.Dialog">
+        <item name="android:windowMinWidthMajor">100%</item>
+        <item name="android:windowMinWidthMinor">100%</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:dialogPreferredPadding">44px</item>
+    </style>
+
+    <style name="Theme.Material.Light.Dialog.BaseAlert" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:windowMinWidthMajor">100%</item>
+        <item name="android:windowMinWidthMinor">100%</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:dialogPreferredPadding">44px</item>
+    </style>
+
+    <!-- App crash / ANR list rows: centred 52 dp pills with a small icon. -->
+    <style name="aerr_list_item" parent="android:Widget.Material.Light.Button.Borderless">
+        <item name="android:minHeight">76px</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceListItemSmall</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:background">@*android:drawable/btn_background_material_filled_tonal_watch</item>
+        <item name="android:drawablePadding">12px</item>
+        <item name="android:drawableTint">?android:attr/colorAccent</item>
+        <item name="android:drawableTintMode">src_atop</item>
+    </style>
+</resources>

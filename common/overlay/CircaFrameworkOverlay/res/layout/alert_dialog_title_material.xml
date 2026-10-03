@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Circa: centred title, no start-aligned icon row (see values/circa_dialogs.xml). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@*android:id/topPanel"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <!-- If the client uses a customTitle, it will be added here. -->
+
+    <LinearLayout
+        android:id="@*android:id/title_template"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingStart="?android:attr/dialogPreferredPadding"
+        android:paddingEnd="?android:attr/dialogPreferredPadding"
+        android:paddingTop="4px">
+
+        <ImageView
+            android:id="@*android:id/icon"
+            android:layout_width="40px"
+            android:layout_height="40px"
+            android:layout_marginBottom="4px"
+            android:scaleType="fitCenter"
+            android:src="@null" />
+
+        <com.android.internal.widget.DialogTitle
+            android:id="@*android:id/alertTitle"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textAlignment="center"
+            style="?android:attr/windowTitleStyle" />
+    </LinearLayout>
+
+    <Space
+        android:id="@*android:id/titleDividerNoCustom"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="@*android:dimen/dialog_title_divider_material" />
+</LinearLayout>

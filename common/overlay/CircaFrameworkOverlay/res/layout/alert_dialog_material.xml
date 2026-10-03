@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Circa: AlertDialog template centred in the circle (see values/circa_dialogs.xml). -->
+<com.android.internal.widget.AlertDialogLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@*android:id/parentPanel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:gravity="center_horizontal|top"
+    android:paddingTop="28px"
+    android:paddingBottom="28px"
+    android:orientation="vertical">
+
+    <include layout="@*android:layout/alert_dialog_title_material" />
+
+    <FrameLayout
+        android:id="@*android:id/contentPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp">
+
+        <ScrollView
+            android:id="@*android:id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Space
+                    android:id="@*android:id/textSpacerNoTitle"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="@*android:dimen/dialog_padding_top_material" />
+
+                <TextView
+                    android:id="@*android:id/message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="?android:attr/dialogPreferredPadding"
+                    android:paddingStart="?android:attr/dialogPreferredPadding"
+                    style="@*android:style/TextAppearance.Material.Subhead"
+                    android:gravity="center_horizontal"
+                    android:textAlignment="center" />
+
+                <Space
+                    android:id="@*android:id/textSpacerNoButtons"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="@*android:dimen/dialog_padding_top_material" />
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@*android:id/customPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp">
+
+        <FrameLayout
+            android:id="@*android:id/custom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@*android:layout/alert_dialog_button_bar_material" />
+</com.android.internal.widget.AlertDialogLayout>

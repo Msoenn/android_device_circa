@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Circa dialogs inside the circle (docs/watch-ui/circa/dialogs.md).
+  px on purpose: the panel is 384 px whatever the density in use.
+-->
+<resources>
+    <!-- SystemUI dialogs that wrap their content (media output switcher, ...): 296 px wide, so the
+         card's top and bottom edges (about 120 px above and below the centre) stay inside the circle
+         (the chord there is 300 px). Stock: match_parent. -->
+    <dimen name="large_dialog_width">296px</dimen>
+
+    <!-- The media output switcher's "this device" row (SettingsLib strings compiled into SystemUI). -->
+    <string name="media_transfer_this_device_name">This watch</string>
+    <string name="media_transfer_this_phone">This watch</string>
+</resources>

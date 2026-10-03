@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Circa: stacked pills inside the circle (see values/circa_dialogs.xml). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="8px"
+        android:paddingBottom="24px"
+    android:paddingStart="44px"
+    android:paddingEnd="44px">
+
+    <Button
+            android:id="@*android:id/aerr_close"
+        android:layout_marginTop="8px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@*android:string/aerr_close_app"
+            android:drawableStart="@*android:drawable/ic_close"
+            style="@*android:style/aerr_list_item" />
+
+    <Button
+            android:id="@*android:id/aerr_wait"
+        android:layout_marginTop="8px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@*android:string/aerr_wait"
+            android:drawableStart="@*android:drawable/ic_schedule"
+            style="@*android:style/aerr_list_item" />
+
+    <Button
+            android:id="@*android:id/aerr_report"
+        android:layout_marginTop="8px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@*android:string/aerr_report"
+            android:drawableStart="@*android:drawable/ic_feedback"
+            style="@*android:style/aerr_list_item" />
+
+</LinearLayout>
