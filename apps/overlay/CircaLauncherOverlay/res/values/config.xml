@@ -14,6 +14,10 @@
     <bool name="config_circaPowerShortPressOpensRecents">true</bool>
     <!-- No setup wizard: let the platform deactivate FRP itself (see frameworks/base PersistentDataBlockService). -->
     <bool name="config_circaDisableFrp">true</bool>
+    <!-- AOD battery: let the AP suspend while the display is in DOZE_SUSPEND (stock watches/phones with AOD set
+         both). Without this PowerManager keeps "SuspendLockout" for the whole always-on period. -->
+    <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
+    <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
 
     <!-- Do Not Disturb access (quick settings tile) and the launcher's notification listener (the
          notification stream), granted by default instead of from the shell. -->
