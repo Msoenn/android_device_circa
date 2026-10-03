@@ -1,8 +1,9 @@
 //
-// Configuration for the Circa apps: the watch face/home launcher (org.pixelwatch.launcher) and the
-// phone link (org.pixelwatch.watchlink). The APKs themselves are not in this public repo: they are
-// prebuilt modules in the private, local-only vendor/circa-private (see README.md). Those modules list
-// the modules below in `required`, so these are only installed together with the apps.
+// Configuration for the Circa apps: the watch face/home launcher (org.pixelwatch.launcher), the round
+// Settings (org.circa.settings) and the phone link (org.pixelwatch.watchlink). The APKs themselves are
+// not in this public repo: they are prebuilt modules in the private, local-only vendor/circa-private
+// (see README.md). Those modules list the modules below in `required`, so these are only installed
+// together with the apps.
 //
 
 // Framework values that point at the launcher: AOD dream, crown/side button policy, DND + notification listener.
@@ -34,6 +35,15 @@ prebuilt_etc {
 prebuilt_etc {
     name: "sysconfig-circa.xml",
     src: "etc/sysconfig-circa.xml",
+    product_specific: true,
+    sub_dir: "sysconfig",
+}
+
+// Circa Settings replaces AOSP Settings' launcher entry: AOSP Settings' MAIN/LAUNCHER activity-alias
+// (com.android.settings/.Settings) is disabled by default, the rest of the package stays as it is.
+prebuilt_etc {
+    name: "sysconfig-circa-settings.xml",
+    src: "etc/sysconfig-circa-settings.xml",
     product_specific: true,
     sub_dir: "sysconfig",
 }

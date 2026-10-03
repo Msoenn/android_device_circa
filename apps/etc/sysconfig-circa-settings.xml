@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Installed with Circa Settings (org.circa.settings, which then owns the app list's "Settings"
+     entry and android.settings.SETTINGS at a higher intent-filter priority).
+
+     AOSP Settings stays installed as the backend for every Settings intent Circa Settings does not
+     answer; only its launcher entry is hidden. That entry is the activity-alias
+     com.android.settings/.Settings (MAIN + LAUNCHER, targetActivity .homepage.SettingsHomepageActivity),
+     a component of its own: the homepage activity behind android.settings.SETTINGS and every other
+     exported activity stay enabled.
+
+     SystemConfig's <component-override> sets the component's manifest default at each package scan
+     (ScanPackageUtils.configurePackageComponents, system packages only), so it holds from first boot
+     and survives a data wipe without a runtime `pm disable`. -->
+<config>
+    <component-override package="com.android.settings">
+        <component class=".Settings" enabled="false" />
+    </component-override>
+</config>
