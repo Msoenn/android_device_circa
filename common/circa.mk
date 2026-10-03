@@ -39,7 +39,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # baked in privately: vendor/circa-private sets PRODUCT_ADB_KEYS (-> /product/etc/security/adb_keys, which
 # /adb_keys links to). Wireless adb on TCP 5555 from boot (adbd reads service.adb.tcp.port at start).
 # Product properties: the generic system partition does not take device properties.
+# persist.sys.usb.config=adb: USB debugging (and so adbd, which also serves TCP) on for a fresh /data;
+# AdbService derives adb_enabled from it. AOSP only adds it when ro.adb.secure=0.
 PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.usb.config=adb \
     service.adb.tcp.port=5555
 # adb root allowed by default (Lineage's adb_root service state), see init/init.circa.rc.
 PRODUCT_PACKAGES += \
