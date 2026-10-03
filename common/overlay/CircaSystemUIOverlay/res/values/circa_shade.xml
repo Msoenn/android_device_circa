@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Circa: turn the Wear-style tray on for this product (com.android.systemui.circa.shade, the framework
+  side is in frameworks/base commit "Circa: Wear-style tray replaces the phone shade"). Without this the
+  shade's flag stays false and SystemUI keeps the phone notification shade; the runtime override
+  (`settings put global circa_wear_shade 1` + SystemUI restart) has the same effect but is only for
+  testing. Everything else the shade needs (accent, edge bands, default tile list) has its default in
+  frameworks/base/packages/SystemUI/res/values/circa_shade_config.xml.
+-->
+<resources>
+    <bool name="config_circaWearShade">true</bool>
+</resources>
