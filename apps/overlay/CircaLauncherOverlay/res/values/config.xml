@@ -12,6 +12,8 @@
     <integer name="config_shortPressOnStemPrimaryBehavior">3</integer>
     <integer name="config_longPressOnStemPrimaryBehavior">2</integer>
     <bool name="config_circaPowerShortPressOpensRecents">true</bool>
+    <!-- No setup wizard: let the platform deactivate FRP itself (see frameworks/base PersistentDataBlockService). -->
+    <bool name="config_circaDisableFrp">true</bool>
 
     <!-- Do Not Disturb access (quick settings tile) and the launcher's notification listener (the
          notification stream), granted by default instead of from the shell. -->
