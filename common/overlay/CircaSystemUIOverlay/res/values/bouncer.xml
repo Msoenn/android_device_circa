@@ -10,14 +10,14 @@
     <!-- Width of the pin view (stock 420dp, wider than the panel); the keys centre in it. -->
     <dimen name="keyguard_security_width">307dp</dimen>
     <!-- Key width cap, gap between columns, row gap (also row0's bottom padding under the entry). -->
-    <dimen name="num_pad_key_width">85dp</dimen>
-    <dimen name="num_pad_key_margin_end">7dp</dimen>
-    <dimen name="num_pad_entry_row_margin_bottom">5dp</dimen>
+    <dimen name="num_pad_key_width">92dp</dimen>
+    <dimen name="num_pad_key_margin_end">8dp</dimen>
+    <dimen name="num_pad_entry_row_margin_bottom">9dp</dimen>
     <!-- width/height of a key: 85/1.42 = 60px, a pill instead of the phone's square key. -->
-    <string name="num_pad_key_ratio">1.42</string>
+    <string name="num_pad_key_ratio">1.35</string>
     <!-- Entry field: a slim bar instead of the phone's 80dp block. -->
-    <dimen name="keyguard_password_height">24dp</dimen>
-    <dimen name="keyguard_pin_field_height">24dp</dimen>
+    <dimen name="keyguard_password_height">26dp</dimen>
+    <dimen name="keyguard_pin_field_height">26dp</dimen>
     <!-- Vertical budget: no top gap, no bottom gap. -->
     <dimen name="keyguard_security_view_top_margin">0dp</dimen>
     <dimen name="keyguard_security_view_bottom_margin">0dp</dimen>

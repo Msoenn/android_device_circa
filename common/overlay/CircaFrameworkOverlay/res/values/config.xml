@@ -34,4 +34,7 @@
 
     <!-- No PIN set: no keyguard at all (wake goes straight to the face). -->
     <bool name="config_disableLockscreenByDefault">true</bool>
+
+    <!-- PINs auto-confirm from 4 digits on: no Enter key on the pad, placeholder dots. -->
+    <bool name="config_circaPinAutoConfirm">true</bool>
 </resources>
