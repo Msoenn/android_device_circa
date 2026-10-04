@@ -7,11 +7,13 @@
     <!-- Buttons (Circa PhoneWindowManager policy, frameworks/base CircaKeyPolicy). A non-zero stem value is
          also what makes PhoneWindowManager install the stem key rule at all.
          Crown short press 3 = Circa: face on top -> app list (ALL_APPS to the HOME holder), else -> face.
-         Crown long press 2 = power menu. Side button short press (screen on, unlocked) -> Recents
-         (org.circa.intent.action.SHOW_RECENTS to the HOME holder). -->
+         Crown long press 2 = power menu. Side button short press 100 = Circa (screen on, no PIN keyguard):
+         toggles the notifications screen of the Circa shade; with a PIN keyguard showing it sleeps.
+         Recents stays on the crown's app list, so the older "side button -> Recents" switch is off. -->
     <integer name="config_shortPressOnStemPrimaryBehavior">3</integer>
     <integer name="config_longPressOnStemPrimaryBehavior">2</integer>
-    <bool name="config_circaPowerShortPressOpensRecents">true</bool>
+    <integer name="config_shortPressOnPowerBehavior">100</integer>
+    <bool name="config_circaPowerShortPressOpensRecents">false</bool>
     <!-- No setup wizard: let the platform deactivate FRP itself (see frameworks/base PersistentDataBlockService). -->
     <bool name="config_circaDisableFrp">true</bool>
     <!-- AOD battery: let the AP suspend while the display is in DOZE_SUSPEND (stock watches/phones with AOD set
