@@ -4,15 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
+    android:background="@*android:color/black"
     android:scrollbars="none">
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 <com.android.internal.widget.AlertDialogLayout
     android:id="@*android:id/parentPanel"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center_vertical"
     android:gravity="center_horizontal|top"
-    android:paddingTop="44px"
-    android:paddingBottom="56px"
+    android:paddingTop="48px"
+    android:paddingBottom="48px"
     android:orientation="vertical">
 
     <include layout="@*android:layout/alert_dialog_title_material" />
@@ -76,4 +80,5 @@
         android:layout_height="wrap_content"
         layout="@*android:layout/alert_dialog_button_bar_material" />
 </com.android.internal.widget.AlertDialogLayout>
+</FrameLayout>
 </ScrollView>
