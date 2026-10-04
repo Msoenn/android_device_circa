@@ -5,7 +5,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingTop="8px"
-        android:paddingBottom="56px"
+        android:paddingBottom="8px"
     android:paddingStart="60px"
     android:paddingEnd="60px">
 
