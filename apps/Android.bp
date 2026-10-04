@@ -6,7 +6,7 @@
 // together with the apps.
 //
 
-// Framework values that point at the launcher: AOD dream, crown/side button policy, DND + notification listener.
+// Framework values that point at the launcher: AOD dream, crown (POWER) / side button (STEM_PRIMARY) policy, DND + notification listener.
 runtime_resource_overlay {
     name: "CircaLauncherOverlay",
     manifest: "overlay/CircaLauncherOverlay/AndroidManifest.xml",

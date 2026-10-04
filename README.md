@@ -47,7 +47,7 @@ userdebug) and `device/phh/treble` (`ro.phh.securize.default`, the `/metadata` f
 | orientation locked | `def_accelerometer_rotation=false` |
 | Bluetooth on, Wi-Fi on, 30 s timeout | `def_bluetooth_on`, `def_wifi_on`, `def_screen_off_timeout` |
 | AOD on | `config_dozeAlwaysOnDisplayAvailable/Enabled=true` (+ the launcher's dream as `config_dozeComponent` when the apps are present) |
-| crown short press | `config_shortPressOnStemPrimaryBehavior=2` + target activity (apps overlay). This is also the default of `stem_primary_button_short_press` |
+| buttons | the crown's press is the POWER key, the side button is STEM_PRIMARY. Crown short press `config_shortPressOnPowerBehavior=101` (app list / face), side button short press `config_shortPressOnStemPrimaryBehavior=100` (notifications screen), side button long press `config_longPressOnStemPrimaryBehavior=100` (exercise app via `org.circa.action.EXERCISE_LONG_PRESS` if a system app has it, else the power menu); all in the apps overlay (CircaLauncherOverlay) |
 | deep idle | `config_autoPowerModeUseMotionSensor=false` (no significant-motion sensor on the watch), `config_autoPowerModePrefetchLocation=false` |
 
 Settings defaults only apply to a fresh `/data`; an existing `/data` keeps its values.
@@ -74,7 +74,7 @@ Settings defaults only apply to a fresh `/data`; an existing `/data` keeps its v
 | Twelve | phone music player; no audio output on the watch | nothing |
 | Backgrounds, ThemePicker | wallpaper and style pickers; the watch face draws its own background | Settings' "Wallpaper & style" entry has no target |
 | LineageSetupWizard | first-boot setup; replaced by the defaults above | nothing (it overrides AOSP Provision itself) |
-| Launcher3QuickStep, Launcher3Overlay | overridden by the Circa launcher module (not here), so a build without our apps keeps a launcher | Quickstep is the recents provider (`config_recentsComponentName`) and handles the swipe-up-home gesture; back (edge swipe) is SystemUI's and keeps working. Home is the crown |
+| Launcher3QuickStep, Launcher3Overlay | overridden by the Circa launcher module (not here), so a build without our apps keeps a launcher | Quickstep is the recents provider (`config_recentsComponentName`) and handles the swipe-up-home gesture; back (edge swipe) is SystemUI's and keeps working. Home is the crown's press |
 | LatinIME | the phone keyboard; overridden by the Circa keyboard module (not here), so a build without our apps keeps a keyboard | nothing. It comes from `handheld_product.mk` and Lineage's `common_mobile.mk` (both products). No other IME is in either product (no OpenWnn, PinyinIME or Google keyboard: `device/phh/treble/gapps.mk` is not inherited) |
 
 Kept on purpose: SystemUI, Settings, SettingsProvider, PermissionController, PackageInstaller,
