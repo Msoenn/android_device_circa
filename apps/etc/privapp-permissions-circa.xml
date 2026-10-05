@@ -36,5 +36,7 @@
         <permission name="android.permission.SCHEDULE_EXACT_ALARM" />
         <!-- mirrored phone notifications show the phone app's name (android.substName) -->
         <permission name="android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME" />
+        <!-- the phone's time zone via Gadgetbridge (no telephony or geo detector on the watch) -->
+        <permission name="android.permission.SET_TIME_ZONE" />
     </privapp-permissions>
 </permissions>
