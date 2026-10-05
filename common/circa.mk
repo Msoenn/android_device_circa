@@ -52,7 +52,12 @@ PRODUCT_PACKAGES += \
 # su permissive on userdebug again (adb root), see sepolicy/private/su.te.
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/circa/common/sepolicy/private
 
-# --- Private parts (our apps, adb key) ----------------------------------------------------------------
-# A plain local directory, not a repo project; absent in public checkouts, which then build without our
-# apps. See README.md.
+# --- The Circa apps -----------------------------------------------------------------------------------
+# vendor/circa-apps (github.com/Msoenn/circa-apps, in the Circa manifest). Its ./build-all.sh builds the APKs
+# into vendor/circa-apps/prebuilt/; until then circa-apps.mk adds nothing and the image keeps Launcher3,
+# LatinIME and DeskClock. The configuration the apps require is in apps/ here.
+$(call inherit-product-if-exists, vendor/circa-apps/circa-apps.mk)
+
+# --- Private parts (adb key, stock SELinux) -------------------------------------------------------------
+# A plain local directory, not a repo project; absent in public checkouts. See README.md.
 $(call inherit-product-if-exists, vendor/circa-private/circa-private.mk)

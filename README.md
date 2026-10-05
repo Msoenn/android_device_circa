@@ -82,21 +82,28 @@ Bluetooth, Shell, TeleService/Telecom, DeskClock (alarms, timers), WebView.
 Candidates for later (not phone-only, so not removed yet): EmergencyInfo, LiveWallpapersPicker,
 SimAppDialog/CellBroadcast (telephony stack; check first whether anything binds them).
 
+## The Circa apps
+
+The watch apps (launcher, WatchLink, Settings, Clock, Companion, Keyboard, Exercise) are in
+[circa-apps](https://github.com/Msoenn/circa-apps), checked out by the Circa manifest at `vendor/circa-apps`.
+They are Gradle projects; `vendor/circa-apps/build-all.sh` builds and signs them and writes the APKs plus
+generated `android_app_import` modules into `vendor/circa-apps/prebuilt/`. `common/circa.mk` inherits
+`vendor/circa-apps/circa-apps.mk`, which adds those modules to `PRODUCT_PACKAGES` once they exist. Each
+module `require`s the matching configuration from `apps/` here (permission files are product-partition
+files and only apply to product priv-apps). The launcher module `overrides` `Launcher3QuickStep` and
+`Launcher3Overlay`, the keyboard module `LatinIME`, the clock module `DeskClock`.
+
+Without `build-all.sh` (or without the project) the products still build, with no Circa apps.
+
 ## Private parts
 
-Our apps and the adb key are not in this repository. They live in `vendor/circa-private/`, a plain local
-directory that no manifest includes. If present, `common/circa.mk` inherits
-`vendor/circa-private/circa-private.mk`, which is expected to:
+The adb key is not in this repository. If a plain local `vendor/circa-private/` directory exists,
+`common/circa.mk` inherits its `circa-private.mk`, which is expected to:
 
-* add the app modules to `PRODUCT_PACKAGES`: `android_app_import` modules, `privileged: true`,
-  `product_specific: true` (the permission files here are product-partition files and only apply to
-  product priv-apps), with `required:` the matching modules from `apps/Android.bp`. The launcher module
-  `overrides` `Launcher3QuickStep` and `Launcher3Overlay`; the keyboard module (`org.circa.keyboard`)
-  `overrides` `LatinIME`.
 * set `PRODUCT_ADB_KEYS` to an `adb_keys` file in that directory.
 * provide the stock system_ext SELinux inputs for `aurora/sepolicy` (see there).
 
-Without it the products still build: no Circa apps (Launcher3 stays), no baked-in adb key, no SELinux merge.
+Without it the products still build: no baked-in adb key, no SELinux merge.
 
 The default keyboard needs no setting here. AOSP's SettingsProvider has no default for
 `default_input_method`/`enabled_input_methods`; on a fresh `/data` InputMethodManagerService enables the
