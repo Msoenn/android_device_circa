@@ -23,6 +23,9 @@
          both). Without this PowerManager keeps "SuspendLockout" for the whole always-on period. -->
     <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
+    <!-- Short screen timeout: the framework clamps Settings.System screen_off_timeout up to
+         config_minimumScreenOffTimeout (10 s stock). Circa's Settings picker starts at 5 s. -->
+    <integer name="config_minimumScreenOffTimeout">3000</integer>
 
     <!-- Do Not Disturb access (quick settings tile) and the launcher's notification listener (the
          notification stream), granted by default instead of from the shell. -->

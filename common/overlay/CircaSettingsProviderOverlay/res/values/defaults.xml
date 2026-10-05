@@ -17,8 +17,8 @@
     <!-- Wi-Fi on (wireless adb, time sync). Option for later, battery: false here = off by default. -->
     <bool name="def_wifi_on">true</bool>
 
-    <!-- Screen timeout 30 s. -->
-    <integer name="def_screen_off_timeout">30000</integer>
+    <!-- Screen timeout 5 s: the shortest Circa Settings offers, and the watch's default. -->
+    <integer name="def_screen_off_timeout">5000</integer>
     <!-- Lock engages the moment the screen turns off (stock Wear OS), instead of AOSP's 5 s. -->
     <integer name="def_lock_screen_lock_after_timeout">0</integer>
 </resources>
