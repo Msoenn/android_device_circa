@@ -15,6 +15,10 @@
         <permission name="android.permission.OVERRIDE_SYSTEM_KEY_BEHAVIOR_IN_FOCUSED_WINDOW" />
         <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND" />
     </privapp-permissions>
+    <privapp-permissions package="org.circa.exercise">
+        <!-- the side button pauses / resumes a workout while the Exercise app is in front -->
+        <permission name="android.permission.OVERRIDE_SYSTEM_KEY_BEHAVIOR_IN_FOCUSED_WINDOW" />
+    </privapp-permissions>
     <privapp-permissions package="org.circa.settings">
         <permission name="android.permission.BLUETOOTH_PRIVILEGED" />
         <permission name="android.permission.CHANGE_COMPONENT_ENABLED_STATE" />
