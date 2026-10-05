@@ -1,8 +1,8 @@
 //
-// Configuration for the Circa apps: the watch face/home launcher (org.pixelwatch.launcher), the round
+// Configuration for the Circa apps: the watch face/home launcher (org.circa.launcher), the round
 // Settings (org.circa.settings), the keyboard (org.circa.keyboard) and the phone link
-// (org.pixelwatch.watchlink). The APKs themselves are not in this public repo: they are prebuilt modules
-// in the private, local-only vendor/circa-private (see README.md). Those modules list the modules below in `required`, so these are only installed
+// (org.circa.watchlink). The APKs are built from github.com/Msoenn/circa-apps (vendor/circa-apps, see
+// README.md); its generated prebuilt modules list the modules below in `required`, so these are only installed
 // together with the apps.
 //
 

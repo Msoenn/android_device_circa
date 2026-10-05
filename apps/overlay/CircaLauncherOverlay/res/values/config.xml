@@ -2,7 +2,7 @@
 <resources>
     <!-- The always-on display is the launcher's ambient dream (a DreamService declared with
          BIND_DREAM_SERVICE), not SystemUI's DozeService. -->
-    <string name="config_dozeComponent" translatable="false">org.pixelwatch.launcher/.AmbientDreamService</string>
+    <string name="config_dozeComponent" translatable="false">org.circa.launcher/.AmbientDreamService</string>
 
     <!-- Buttons (Circa PhoneWindowManager policy, frameworks/base CircaKeyPolicy). The crown's press is the
          POWER key; the side button is STEM_PRIMARY (device keylayout). A non-zero stem value is also what
@@ -26,6 +26,6 @@
 
     <!-- Do Not Disturb access (quick settings tile) and the launcher's notification listener (the
          notification stream), granted by default instead of from the shell. -->
-    <string name="config_defaultDndAccessPackages" translatable="false">org.pixelwatch.launcher</string>
-    <string name="config_defaultListenerAccessPackages" translatable="false">org.pixelwatch.launcher</string>
+    <string name="config_defaultDndAccessPackages" translatable="false">org.circa.launcher</string>
+    <string name="config_defaultListenerAccessPackages" translatable="false">org.circa.launcher</string>
 </resources>
