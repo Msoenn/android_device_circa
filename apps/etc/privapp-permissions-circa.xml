@@ -34,5 +34,7 @@
     </privapp-permissions>
     <privapp-permissions package="org.circa.watchlink">
         <permission name="android.permission.SCHEDULE_EXACT_ALARM" />
+        <!-- mirrored phone notifications show the phone app's name (android.substName) -->
+        <permission name="android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME" />
     </privapp-permissions>
 </permissions>
