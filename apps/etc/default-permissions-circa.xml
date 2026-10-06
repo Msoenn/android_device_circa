@@ -12,6 +12,7 @@
         <permission name="android.permission.POST_NOTIFICATIONS" fixed="false" />
     </exception>
     <exception package="org.circa.exercise">
+        <permission name="android.permission.ACCESS_BACKGROUND_LOCATION" fixed="false" />
         <!-- live heart rate (API 36: health.READ_HEART_RATE; BODY_SENSORS below 36) -->
         <permission name="android.permission.health.READ_HEART_RATE" fixed="false" />
         <permission name="android.permission.BODY_SENSORS" fixed="false" />

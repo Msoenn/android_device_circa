@@ -16,6 +16,8 @@
         <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND" />
     </privapp-permissions>
     <privapp-permissions package="org.circa.exercise">
+        <!-- auto-detected workouts start the recording service from a broadcast -->
+        <permission name="android.permission.START_FOREGROUND_SERVICES_FROM_BACKGROUND" />
         <!-- the side button pauses / resumes a workout while the Exercise app is in front -->
         <permission name="android.permission.OVERRIDE_SYSTEM_KEY_BEHAVIOR_IN_FOCUSED_WINDOW" />
     </privapp-permissions>
