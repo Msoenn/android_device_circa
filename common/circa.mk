@@ -28,11 +28,12 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ro.setupwizard.mode=DISABLED
 
 # --- Display -------------------------------------------------------------------------------------------
-# 160 dpi on the 384x384 panel (the vendor says 320). Product properties load after vendor/odm, so this
-# value wins over the vendor's ro.sf.lcd_density. On the emulator the AVD's qemu.sf.lcd_density takes
-# precedence over ro.sf.lcd_density (DisplayMetrics), so set hw.lcd.density=160 in the AVD instead.
+# 192 dpi on the 384x384 panel (the vendor says 320): 1dp = 1.2px, 320dp across. Every Circa screen is
+# designed at 192, so a watch without a wm density override gets the same layout. Product properties load
+# after vendor/odm, so this value wins over the vendor's ro.sf.lcd_density. On the emulator the AVD's
+# qemu.sf.lcd_density takes precedence over ro.sf.lcd_density (DisplayMetrics); `wm density 192` there.
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.sf.lcd_density=160
+    ro.sf.lcd_density=192
 
 # --- adb -----------------------------------------------------------------------------------------------
 # Key authentication stays on (ro.adb.secure=1 from vendor/lineage for userdebug). The authorized key is

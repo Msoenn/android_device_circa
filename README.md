@@ -42,7 +42,7 @@ userdebug) and `device/phh/treble` (`ro.phh.securize.default`, the `/metadata` f
 | securize off | `ro.phh.securize.default=0` (device/phh/treble fork) |
 | adb key auth | `ro.adb.secure=1` (Lineage default) + `PRODUCT_ADB_KEYS` from the private directory |
 | wireless adb | `service.adb.tcp.port=5555` (adbd listens on TCP from its start) |
-| density 160 | `ro.sf.lcd_density=160` in product properties (loaded after vendor/odm, so it wins). The emulator's `qemu.sf.lcd_density` (AVD `hw.lcd.density`) still takes precedence there |
+| density 192 | `ro.sf.lcd_density=192` in product properties (loaded after vendor/odm, so it wins); 1dp = 1.2px, the density every Circa screen is designed at. The emulator's `qemu.sf.lcd_density` (AVD `hw.lcd.density`) still takes precedence there (`wm density 192`) |
 | no setup wizard | LineageSetupWizard removed, `ro.setupwizard.mode=DISABLED`, `def_device_provisioned` / `def_user_setup_complete` = true |
 | orientation locked | `def_accelerometer_rotation=false` |
 | Bluetooth on, Wi-Fi on, 30 s timeout | `def_bluetooth_on`, `def_wifi_on`, `def_screen_off_timeout` |
