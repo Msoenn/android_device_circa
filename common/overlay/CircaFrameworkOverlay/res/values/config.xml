@@ -37,4 +37,10 @@
 
     <!-- PINs auto-confirm from 4 digits on: no Enter key on the pad, placeholder dots. -->
     <bool name="config_circaPinAutoConfirm">true</bool>
+
+    <!-- Network time from the NTP Pool's Android vendor zone (AOSP's default before
+         time.android.com) instead of Google. -->
+    <string-array translatable="false" name="config_ntpServers">
+        <item>ntp://2.android.pool.ntp.org</item>
+    </string-array>
 </resources>

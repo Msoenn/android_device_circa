@@ -33,7 +33,8 @@ LOCAL_OVERRIDES_PACKAGES := \
     Recorder \
     Stk \
     ThemePicker \
-    Twelve
+    Twelve \
+    Updater
 LOCAL_UNINSTALLABLE_MODULE := true
 LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_SRC_FILES := /dev/null

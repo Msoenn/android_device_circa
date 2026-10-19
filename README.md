@@ -73,6 +73,7 @@ Settings defaults only apply to a fresh `/data`; an existing `/data` keeps its v
 | Stk | SIM Toolkit; the watch has no SIM | nothing (SimAppDialog/CellBroadcast stay) |
 | Twelve | phone music player; no audio output on the watch | nothing |
 | Backgrounds, ThemePicker | wallpaper and style pickers; the watch face draws its own background | Settings' "Wallpaper & style" entry has no target |
+| Updater | LineageOS OTA updater; Circa updates are flashed, and it polls download.lineageos.org | nothing |
 | LineageSetupWizard | first-boot setup; replaced by the defaults above | nothing (it overrides AOSP Provision itself) |
 | Launcher3QuickStep, Launcher3Overlay | overridden by the Circa launcher module (not here), so a build without our apps keeps a launcher | Quickstep is the recents provider (`config_recentsComponentName`) and handles the swipe-up-home gesture; back (edge swipe) is SystemUI's and keeps working. Home is the crown's press |
 | LatinIME | the phone keyboard; overridden by the Circa keyboard module (not here), so a build without our apps keeps a keyboard | nothing. It comes from `handheld_product.mk` and Lineage's `common_mobile.mk` (both products). No other IME is in either product (no OpenWnn, PinyinIME or Google keyboard: `device/phh/treble/gapps.mk` is not inherited) |

@@ -21,4 +21,18 @@
     <integer name="def_screen_off_timeout">5000</integer>
     <!-- Lock engages the moment the screen turns off (stock Wear OS), instead of AOSP's 5 s. -->
     <integer name="def_lock_screen_lock_after_timeout">0</integer>
+
+    <!-- Privacy (Settings.Global). Existing /data gets the same values once, from system_server's
+         circa_privacy_defaults_v1 migration (frameworks/base com.android.server.circa). -->
+    <!-- No connectivity check to Google (captive_portal_mode 0 = ignore): networks count as
+         validated without a probe; hotel sign-in pages are not detected. -->
+    <string name="def_captive_portal_mode" translatable="false">0</string>
+    <!-- No background scanning: Wi-Fi scans only while Wi-Fi is on, no BLE scanning while
+         Bluetooth is off, and Wi-Fi does not turn itself back on near saved networks. -->
+    <integer name="def_wifi_scan_always_available">0</integer>
+    <string name="def_ble_scan_always_available" translatable="false">0</string>
+    <bool name="def_wifi_wakeup_enabled">false</bool>
+    <!-- Non-persistent Wi-Fi MAC randomization for every network (a fresh random MAC after 4 h
+         disconnected, and at least daily), instead of one stable random MAC per network. -->
+    <string name="def_non_persistent_mac_randomization_force_enabled" translatable="false">1</string>
 </resources>
