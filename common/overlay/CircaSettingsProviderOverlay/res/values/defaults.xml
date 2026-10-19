@@ -25,7 +25,9 @@
     <!-- Privacy (Settings.Global). Existing /data gets the same values once, from system_server's
          circa_privacy_defaults_v1 migration (frameworks/base com.android.server.circa). -->
     <!-- No connectivity check to Google (captive_portal_mode 0 = ignore): networks count as
-         validated without a probe; hotel sign-in pages are not detected. -->
+         validated without a probe. Trade-off: no captive-portal (hotel sign-in) detection, no
+         "connected, no internet" validation and no data-stall detection on Wi-Fi. Accepted: the
+         watch's link to the phone is BLE, not IP, and there is no other network to fall back to. -->
     <string name="def_captive_portal_mode" translatable="false">0</string>
     <!-- No background scanning: Wi-Fi scans only while Wi-Fi is on, no BLE scanning while
          Bluetooth is off, and Wi-Fi does not turn itself back on near saved networks. -->
